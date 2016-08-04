@@ -1,10 +1,10 @@
+/* eslint-env browser */
+
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 
-class App extends React.Component {
-  render () {
-    return <p>Hello!!!!</p>;
-  }
-}
+const App = () => (
+  <p>Hello!!!!</p>
+);
 
-render(<App/>, document.getElementById('app'));
+render(<App />, document.getElementById('app'));
