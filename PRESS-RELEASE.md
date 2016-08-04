@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > FoodCompass
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > A mobile compass application for discovering nearby food fast. 
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > FoodCompass uses your phone's GPS and internal compass to orient you towards the closest food joint that serves your desired dish.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Searching online for food you want can sometimes end up becoming an unexpected hassle. After visiting many different sites and weighing different restaurant options, it may be hard to make a final decision. This wastes valuable time that could be spent eating!
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > FoodCompass solves this problem with a simple orienteering design that makes deciding on a place to eat as easy, quick, and fun as possible.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "FoodCompass is an invaluable tool that takes all the hassle out of deciding where to eat." -Daniel Glaser
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Download FoodCompass, select a dish, and set your course for food!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "FoodCompass is awesome. I hate having to decide where I want to eat. The app does it for me." -Sarvey Handers
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > We hope that FoodCompass will provide you with a fun and fast way to find food you want near you. Download it now!
