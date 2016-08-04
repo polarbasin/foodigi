@@ -19,6 +19,19 @@
   - (refactor) Refactor production code
   - (test) Add missing tests, refactor tests; no production code change
   - (chore) Update grunt tasks, etc; no production code change
+1. Remember to add keyword with number of the issue your commit is closing, e.g. `[resolves #45]`
+The following keywords will close an issue via commit message:
+
+- close
+- closes
+- closed
+- fix
+- fixes
+- fixed
+- resolve
+- resolves
+- resolved
+
 1. When you've finished with your fix or feature, Rebase upstream changes into your branch. submit a [pull request][]
    directly to organizational master. Include a description of your changes.
 1. Your pull request will be reviewed by another maintainer. The point of code
