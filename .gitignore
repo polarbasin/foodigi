@@ -1,7 +1,9 @@
 .env
 
+#ignore builds
 client/public/bundle.js
 client/public/bundle.js.map
+server/dist/
 
 # Logs
 logs
