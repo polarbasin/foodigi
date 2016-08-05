@@ -1,5 +1,10 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import server from './server';
+
+if (process.env.NODE_ENV === 'development') {
+  dotenv.config();
+}
 
 const app = express();
 
