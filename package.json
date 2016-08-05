@@ -7,10 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/dist/index.js",
     "webpack": "webpack -d",
+    "watch": "webpack -d --watch",
     "babel": "babel server/src/ -d server/dist",
     "prestart": "npm run lint && npm run build",
-    "build": "npm run webpack && npm run babel",
-    "lint": "eslint 'server/**/*.js ';"
+    "build": "npm run babel",
+    "lint": "eslint 'server/**/*.js ';",
+    "dev": "concurrently --kill-others --raw \"heroku local\" \"npm run watch\" "
   },
   "repository": {
     "type": "git",
