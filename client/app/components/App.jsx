@@ -1,27 +1,44 @@
 import React from 'react';
+
 import Button from './Button.jsx';
 import Search from './Search.jsx';
+import Coords from './Coords.jsx';
+import helpers from '../helpers';
 import '../css/app.scss';
 
-const App = () => (
-  <div className="container">
-    <h1>foodigi</h1>
-    <p>What do you<br />want to eat?</p>
-    <Search />
-    <Button />
-  </div>
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleGoClick = this.handleGoClick.bind(this);
 
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
+    this.state = {
+      currCoods: {},
+    };
+  }
 
-//   render() {
-//     return (
-//       <p>Hello!!!!</p>
-//     );
-//   }
-// }
+  componentDidMount() {
+    helpers.getGeolocation()
+      .then(position => {
+        this.setState({ currCoods: position });
+      });
+  }
+
+  handleGoClick() {
+    // GET req to our server with location and search query
+    // loading pacifier?
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>foodigi</h1>
+        <p>What do you<br />want to eat?</p>
+        <Coords location={this.state.currCoods} />
+        <Search />
+        <Button handleClick={this.handleGoClick} />
+      </div>
+    );
+  }
+}
 
 export default App;
