@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button.jsx';
 import Search from './Search.jsx';
+import '../css/app.css';
 
 const App = () => (
   <div className="container">
