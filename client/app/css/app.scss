@@ -2,15 +2,42 @@ $pri-color-blue: #80bfff;
 $sup-color-blue: #001f3f;
 $pri-color-orange: #663000;
 $sup-color-orange: #FF851B;
+$font: 'Fredoka One', cursive;
 
 
 body {
   background: $sup-color-blue;
   color: $pri-color-blue;
   text-align: center;
+  font-family: $font;
+}
+
+h1 {
+  font-size: 150px;
+  color: $sup-color-orange;
+}
+
+p {
+  font-size: 30px;
+}
+
+input {
+  width: 25%;
+  height: 50px;
+  border: none;
+  background-color: $sup-color-blue;
+  font-family: $font;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 3px solid white;
 }
 
 .go-button {
+  margin-top: 1em;
+  width: 50px;
+  height: 50px;
   background-color: $sup-color-orange;
   color: $pri-color-orange;
+  font-family: $font;
 }
