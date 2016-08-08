@@ -11,7 +11,7 @@
     "watch": "webpack -d --watch",
     "babel": "babel server/src/ -d server/dist",
     "babel-w": "babel-watch server/src/index.js",
-    "prestart": "npm run lint && npm run build",
+    "prestart": "npm install && npm run lint && npm run build",
     "build": "npm run babel && npm run webpack",
     "lint": "eslint 'server/**/*.js ';",
     "dev": "export NODE_ENV=development && npm run lint && npm run babel && concurrently --kill-others --raw \"npm run nodemon\" \"npm run watch\" "
