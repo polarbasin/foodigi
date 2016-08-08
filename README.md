@@ -1,8 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/polarbasin/polarbasin.png?label=ready&title=Ready)](https://waffle.io/polarbasin/polarbasin)
 # PolarBasin
 
-> Pithy project description
-Greenfield Project for Hack Reactor Immersion at Operation Spark
+> Greenfield Project for Hack Reactor Immersion at Operation Spark
 
 ## Team
 

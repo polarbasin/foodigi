@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > FoodCompass
+  > foodigi
 
 ## Sub-Heading ##
   > A mobile compass application for discovering nearby food fast. 
 
 ## Summary ##
-  > FoodCompass uses your phone's GPS and internal compass to orient you towards the closest food joint that serves your desired dish.
+  > foodigi uses your phone's GPS and internal compass to orient you towards the closest food joint that serves your desired dish.
 
 ## Problem ##
   > Searching online for food you want can sometimes end up becoming an unexpected hassle. After visiting many different sites and weighing different restaurant options, it may be hard to make a final decision. This wastes valuable time that could be spent eating!
 
 ## Solution ##
-  > FoodCompass solves this problem with a simple orienteering design that makes deciding on a place to eat as easy, quick, and fun as possible.
+  > foodigi solves this problem with a simple orienteering design that makes deciding on a place to eat as easy, quick, and fun as possible.
 
 ## Quote from You ##
-  > "FoodCompass is an invaluable tool that takes all the hassle out of deciding where to eat." -Daniel Glaser
+  > "foodigi is an invaluable tool that takes all the hassle out of deciding where to eat." -Daniel Glaser
 
 ## How to Get Started ##
-  > Download FoodCompass, select a dish, and set your course for food!
+  > Download foodigi, search for a dish, and set your course for food!
 
 ## Customer Quote ##
-  > "FoodCompass is awesome. I hate having to decide where I want to eat. The app does it for me." -Sarvey Handers
+  > "foodigi is awesome. I hate having to decide where I want to eat. The app does it for me." -Sarvey Handers
 
 ## Closing and Call to Action ##
-  > We hope that FoodCompass will provide you with a fun and fast way to find food you want near you. Download it now!
+  > We hope that foodigi will provide you with a fun and fast way to find food you want near you. Download it now!
