@@ -41,8 +41,10 @@
     "eslint-plugin-react": "^6.0.0",
     "express": "^4.14.0",
     "html-loader": "^0.4.3",
+    "node-sass": "^3.8.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   }
