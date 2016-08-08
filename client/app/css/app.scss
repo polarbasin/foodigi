@@ -2,7 +2,7 @@ $pri-color-blue: #80bfff;
 $sup-color-blue: #001f3f;
 $pri-color-orange: #663000;
 $sup-color-orange: #FF851B;
-$font: 'Fredoka One', cursive;
+$font: 'Fredoka One';
 
 body {
   background: $sup-color-blue;
@@ -40,7 +40,7 @@ input {
 .go-button {
   width: 300px;
   height: 300px;
-  margin-top: 1.5em;
+  margin-top: 1.2em;
   background-color: $sup-color-orange;
   border-radius: 50%;
   font-family: $font;
