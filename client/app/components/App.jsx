@@ -5,7 +5,7 @@ import '../css/app.scss';
 
 const App = () => (
   <div className="container">
-    <h1>FoodCompass</h1>
+    <h1>foodigi</h1>
     <p>What do you want to eat?</p>
     <Search />
     <Button />
