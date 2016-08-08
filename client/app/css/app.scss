@@ -4,7 +4,6 @@ $pri-color-orange: #663000;
 $sup-color-orange: #FF851B;
 $font: 'Fredoka One', cursive;
 
-
 body {
   background: $sup-color-blue;
   color: $pri-color-blue;
@@ -13,31 +12,39 @@ body {
 }
 
 h1 {
-  font-size: 150px;
+  font-family: $font;
+  font-size: 220px;
   color: $sup-color-orange;
 }
 
 p {
-  font-size: 30px;
+  font-size: 6em;
+}
+
+br {
+  line-height: 1px;
 }
 
 input {
-  width: 25%;
-  height: 50px;
+  width: 80%;
+  height: 100px;
   border: none;
   background-color: $sup-color-blue;
   font-family: $font;
   color: white;
-  font-size: 2em;
+  font-size: 5.5em;
   text-align: center;
-  border-bottom: 3px solid white;
+  border-bottom: 5px solid white;
 }
 
 .go-button {
-  margin-top: 1em;
-  width: 50px;
-  height: 50px;
+  width: 300px;
+  height: 300px;
+  margin-top: 1.5em;
   background-color: $sup-color-orange;
-  color: $pri-color-orange;
+  border-radius: 50%;
   font-family: $font;
+  font-size: 7em;
+  color: white;
+  border: none;
 }

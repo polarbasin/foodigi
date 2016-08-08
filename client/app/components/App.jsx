@@ -6,7 +6,7 @@ import '../css/app.scss';
 const App = () => (
   <div className="container">
     <h1>foodigi</h1>
-    <p>What do you want to eat?</p>
+    <p>What do you<br />want to eat?</p>
     <Search />
     <Button />
   </div>
