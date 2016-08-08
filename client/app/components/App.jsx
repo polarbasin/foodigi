@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button.jsx';
 import Search from './Search.jsx';
-import '../css/app.css';
+import '../css/app.scss';
 
 const App = () => (
   <div className="container">

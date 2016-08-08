@@ -1,0 +1,16 @@
+$pri-color-blue: #80bfff;
+$sup-color-blue: #001f3f;
+$pri-color-orange: #663000;
+$sup-color-orange: #FF851B;
+
+
+body {
+  background: $sup-color-blue;
+  color: $pri-color-blue;
+  text-align: center;
+}
+
+.go-button {
+  background-color: $sup-color-orange;
+  color: $pri-color-orange;
+}
