@@ -5,6 +5,7 @@ import Compass from './Compass.jsx';
 import Search from './Search.jsx';
 import Coords from './Coords.jsx';
 import helpers from '../helpers';
+import services from '../services';
 
 import '../css/app.scss';
 
@@ -12,9 +13,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleGoClick = this.handleGoClick.bind(this);
+    this.handleSearchInput = this.handleSearchInput.bind(this);
 
     this.state = {
-      currCoods: {},
+      currCoords: {},
       localeUpdateCount: 0,
       err: { message: '' },
       heading: 270,
@@ -27,9 +29,8 @@ class App extends React.Component {
         console.error(err);
         this.setState({ err });
       } else {
-        console.log('getting new location', position);
         this.setState({
-          currCoods: position.coords,
+          currCoords: position.coords,
           localeUpdateCount: this.state.localeUpdateCount += 1,
         });
       }
@@ -41,8 +42,16 @@ class App extends React.Component {
   }
 
   handleGoClick() {
-    // GET req to our server with location and search query
+    services.searchYelp(
+      this.state.food,
+      this.state.currCoords.latitude,
+      this.state.currCoords.longitude
+    );
     // loading pacifier?
+  }
+
+  handleSearchInput(e) {
+    this.setState({ food: e.target.value });
   }
 
   render() {
@@ -52,11 +61,11 @@ class App extends React.Component {
         <p>What do you<br />want to eat?</p>
         <Compass heading={this.state.heading} />
         <Coords
-          location={this.state.currCoods}
+          location={this.state.currCoords}
           count={this.state.localeUpdateCount}
           err={this.state.err}
         />
-        <Search />
+        <Search onInput={this.handleSearchInput} />
         <Button handleClick={this.handleGoClick} />
       </div>
     );
