@@ -1,11 +1,18 @@
 /* https://github.com/jamesgpearce/compios5 */
 
+$pri-color-blue: #80bfff;
+$sup-color-blue: #001f3f;
+$pri-color-orange: #663000;
+$sup-color-orange: #FF851B;
+$spinner-radius: 550;
+$font: 'Fredoka One';
+
 #compass {
-    background-image:-webkit-radial-gradient(30% 30%, #FFEE72, #666900);
+    background-color: $sup-color-orange;
     margin:auto;
-    border-radius:130px;
-    width:240px;
-    height:240px;
+    border-radius:($spinner-radius / 1.53846153846) * 1px;
+    width:($spinner-radius * 1.2) * 1px;
+    height:($spinner-radius * 1.2) * 1px;
     display:block;
 }
 @media (orientation:landscape) {
@@ -19,45 +26,47 @@
     }
 }
 #spinner {
-    background-image:-webkit-radial-gradient(30% 30%, #FFF6F4, #D1C790);
+    background-color: $pri-color-blue;
     box-shadow:0 0 4px #444 inset;
     position:relative;
-    top:20px;
-    left:20px;
-    border-radius:100px;
-    width:200px;
-    height:200px;
-    -webkit-transition: all 0.2s ease-in-out;
+    top:($spinner-radius / 10) * 1px;
+    left:($spinner-radius / 10) * 1px;
+    border-radius:($spinner-radius / 2) * 1px;
+    width: $spinner-radius * 1px;
+    height: $spinner-radius * 1px;
+    -webkit-transition: all 0.1s ease-in;
 }
 #pin {
-    background-image:-webkit-radial-gradient(30% 30%, #FFEE72, #666900);
+    background-color: $sup-color-orange;
     box-shadow:0 0 4px #444;
     position:relative;
-    top:90px;
-    left:90px;
-    border-radius:10px;
-    width:20px;
-    height:20px;
+    top: ($spinner-radius / 2.22222222222) * 1px;
+    left: ($spinner-radius / 2.22222222222) * 1px;
+    border-radius: ($spinner-radius / 20) * 1px;
+    width:($spinner-radius / 10) * 1px;
+    height:($spinner-radius / 10) * 1px;
 }
 .degree, .point, .arrow {
+    font-size:40px;
     position:absolute;
-    left:80px;
-    width:40px;
+    left:($spinner-radius / 2.5) * 1px;
+    width:($spinner-radius / 5) * 1px;
     text-align:center;
-    top:5px;
-    -webkit-transform-origin:20px 95px;
+    top:($spinner-radius / 40) * 1px;
+    -webkit-transform-origin:($spinner-radius / 10) * 1px ($spinner-radius / 2.10526315789) * 1px;
 }
 .degree {
-    color:#222;
+    color: $sup-color-blue;
 }
 .point {
-    top:45px;
-    -webkit-transform-origin:20px 55px;
-    font-size:10px;
+    color: white;
+    top:($spinner-radius / 4.44444444444) * 1px;
+    -webkit-transform-origin:($spinner-radius / 10) * 1px ($spinner-radius / 3.63636363636) * 1px;
+    font-size:($spinner-radius / 20) * 1px;
 }
 .point.main {
     font-weight:bold;
-    font-size:larger;
+    font-size:($spinner-radius / 10) * 1px;
 }
 .arrow {
     left:95px;
