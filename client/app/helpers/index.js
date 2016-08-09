@@ -1,4 +1,6 @@
 /* global navigator */
+import GyroNorm from '../../../node_modules/gyronorm/dist/gyronorm.complete.min.js';
+
 const helpers = {
   getGeolocation: () => {
     if (!('geolocation' in navigator)) {
@@ -39,6 +41,15 @@ const helpers = {
         timeout: 500,
       });
     }
+  },
+
+  getDeviceHeading: (callback) => {
+    const gn = new GyroNorm();
+    gn.init().then(() => {
+      gn.start((data) => {
+        callback(null, 360 - data.do.alpha);
+      });
+    });
   },
 };
 
