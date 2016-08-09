@@ -13,14 +13,24 @@ class App extends React.Component {
 
     this.state = {
       currCoods: {},
+      localeUpdateCount: 0,
+      err: { message: '' },
     };
   }
 
   componentDidMount() {
-    helpers.getGeolocation()
-      .then(position => {
-        this.setState({ currCoods: position });
-      });
+    helpers.watchGeolocation((err, position) => {
+      if (err) {
+        console.error(err);
+        this.setState({ err });
+      } else {
+        console.log('getting new location', position);
+        this.setState({
+          currCoods: position.coords,
+          localeUpdateCount: this.state.localeUpdateCount += 1,
+        });
+      }
+    });
   }
 
   handleGoClick() {
@@ -33,7 +43,11 @@ class App extends React.Component {
       <div>
         <h1>foodigi</h1>
         <p>What do you<br />want to eat?</p>
-        <Coords location={this.state.currCoods} />
+        <Coords
+          location={this.state.currCoods}
+          count={this.state.localeUpdateCount}
+          err={this.state.err}
+        />
         <Search />
         <Button handleClick={this.handleGoClick} />
       </div>
