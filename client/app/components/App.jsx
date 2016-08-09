@@ -1,9 +1,11 @@
 import React from 'react';
 
 import Button from './Button.jsx';
+import Compass from './Compass.jsx';
 import Search from './Search.jsx';
 import Coords from './Coords.jsx';
 import helpers from '../helpers';
+
 import '../css/app.scss';
 
 class App extends React.Component {
@@ -15,6 +17,7 @@ class App extends React.Component {
       currCoods: {},
       localeUpdateCount: 0,
       err: { message: '' },
+      heading: 270,
     };
   }
 
@@ -31,6 +34,10 @@ class App extends React.Component {
         });
       }
     });
+
+    helpers.getDeviceHeading((err, heading) => {
+      this.setState({ heading });
+    });
   }
 
   handleGoClick() {
@@ -43,6 +50,7 @@ class App extends React.Component {
       <div>
         <h1>foodigi</h1>
         <p>What do you<br />want to eat?</p>
+        <Compass heading={this.state.heading} />
         <Coords
           location={this.state.currCoods}
           count={this.state.localeUpdateCount}
