@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Button from './Button.jsx';
-import Compass from './Compass.jsx';
 import Search from './Search.jsx';
-import Coords from './Coords.jsx';
+import Results from './Results.jsx';
+import Coords from './dev_components/Coords.jsx';
 import helpers from '../helpers';
 import services from '../services';
 
@@ -20,6 +20,8 @@ class App extends React.Component {
       localeUpdateCount: 0,
       err: { message: '' },
       heading: 270,
+      showResults: false,
+      buttonText: 'GO',
     };
   }
 
@@ -42,6 +44,7 @@ class App extends React.Component {
   }
 
   handleGoClick() {
+    this.setState({ showResults: !this.state.showResults });
     services.searchYelp(
       this.state.food,
       this.state.currCoords.latitude,
@@ -58,15 +61,26 @@ class App extends React.Component {
     return (
       <div>
         <h1>foodigi</h1>
-        <p>What do you<br />want to eat?</p>
-        <Compass heading={this.state.heading} />
         <Coords
           location={this.state.currCoords}
           count={this.state.localeUpdateCount}
           err={this.state.err}
         />
-        <Search onInput={this.handleSearchInput} />
-        <Button handleClick={this.handleGoClick} />
+        { this.state.showResults
+          ? <Results
+            heading={this.state.heading}
+          />
+          :
+          (<div>
+            <p>What do you<br />want to eat?</p>
+            <Search onInput={this.handleSearchInput} />
+          </div>
+          )
+        }
+        <Button
+          handleClick={this.handleGoClick}
+          text={this.state.showResults ? 'BACK' : 'GO'}
+        />
       </div>
     );
   }

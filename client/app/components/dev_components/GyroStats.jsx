@@ -1,5 +1,5 @@
 import React from 'react';
-import GyroNorm from '../../../node_modules/gyronorm/dist/gyronorm.complete.min.js';
+import GyroNorm from '../../../../node_modules/gyronorm/dist/gyronorm.complete.min.js';
 
 const gn = new GyroNorm();
 
