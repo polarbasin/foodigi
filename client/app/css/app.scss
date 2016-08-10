@@ -17,7 +17,15 @@ h1 {
   color: $sup-color-orange;
 }
 
-p {
+.dev-info {
+  font-size: 30px;
+  color: red;
+  font-family: monospace;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.question {
   font-size: 6em;
 }
 
