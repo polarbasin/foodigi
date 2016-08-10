@@ -1,12 +1,14 @@
 import React from 'react';
 
 const Coords = ({ location, count, err }) => (
-  <div>
-    <p>status: { err.message }</p>
-    <p>updateCount: { count }</p>
-    <p>lat: { location.latitude }</p>
-    <p>long: { location.longitude }</p>
-    <p>acc: { location.accuracy }</p>
+  <div className="dev-info">
+    <p>
+      status: { err.message }<br />
+      updateCount: { count }<br />
+      lat: { location.latitude }<br />
+      long: { location.longitude }<br />
+      acc: { location.accuracy }<br />
+    </p>
   </div>
 );
 
