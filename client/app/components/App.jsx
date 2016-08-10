@@ -7,6 +7,8 @@ import Coords from './dev_components/Coords.jsx';
 import helpers from '../helpers';
 import services from '../services';
 
+import testData from './dev_components/testdata.js';
+
 import '../css/app.scss';
 
 class App extends React.Component {
@@ -22,6 +24,7 @@ class App extends React.Component {
       heading: 270,
       showResults: false,
       buttonText: 'GO',
+      foodData: testData,
     };
   }
 
@@ -44,13 +47,20 @@ class App extends React.Component {
   }
 
   handleGoClick() {
-    this.setState({ showResults: !this.state.showResults });
-    services.searchYelp(
-      this.state.food,
-      this.state.currCoords.latitude,
-      this.state.currCoords.longitude
-    );
-    // loading pacifier?
+    this.setState({ showResults: !this.state.showResults }, () => {
+      if (this.state.showResults) {
+        // loading pacifier?
+        services.searchYelp(
+          this.state.food,
+          this.state.currCoords.latitude,
+          this.state.currCoords.longitude
+        )
+        .then((results) => {
+          console.log(results);
+          this.setState({ foodData: results.businesses[0] });
+        });
+      }
+    });
   }
 
   handleSearchInput(e) {
@@ -69,10 +79,11 @@ class App extends React.Component {
         { this.state.showResults
           ? <Results
             heading={this.state.heading}
+            foodData={this.state.foodData}
           />
           :
           (<div>
-            <p>What do you<br />want to eat?</p>
+            <p className="question">What do you<br />want to eat?</p>
             <Search onInput={this.handleSearchInput} />
           </div>
           )
