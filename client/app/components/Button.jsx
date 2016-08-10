@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ handleClick }) => (
+const Button = ({ handleClick, text }) => (
   <div className="button">
     <div className="round-button">
       <div className="round-button-circle">
@@ -9,13 +9,16 @@ const Button = ({ handleClick }) => (
           className="go-button"
           onClick={handleClick}
         >
-          GO
+          {text}
         </button>
       </div>
     </div>
   </div>
 );
 
-Button.propTypes = { handleClick: React.PropTypes.func };
+Button.propTypes = {
+  handleClick: React.PropTypes.func,
+  text: React.PropTypes.string,
+};
 
 export default Button;
