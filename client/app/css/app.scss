@@ -60,17 +60,28 @@ input {
   border: none;
 }
 
+svg {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+  height: 500px;
+}
+
 .yelp-bar {
-  float: bottom;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 h4 {
-  font-size: 1.7em;
+  font-size: 2em;
 }
 
 .logo {
   height: 75px;
   position: relative;
   left: 12px;
-  top: 17px;
+  top: 22px;
 }
