@@ -43,6 +43,9 @@ export default {
         },
       ],
     };
-    res.send(fakeResData);
+    // simulate network latency
+    setTimeout(() => {
+      res.send(fakeResData);
+    }, 3000);
   },
 };
