@@ -1,4 +1,5 @@
 /* global navigator */
+import GC from 'great-circle'
 import GyroNorm from '../../../node_modules/gyronorm/dist/gyronorm.complete.min.js';
 
 const helpers = {
@@ -51,6 +52,17 @@ const helpers = {
       });
     });
   },
+  calculateBearing: (origin, dest) => (
+    GC.bearing(origin.latitude, origin.longitude, dest.latitude, dest.longitude)
+  ),
+  calculateDist: (origin, dest, unitType = 'FT') => (
+    // KM - kilometers
+    // MI - miles
+    // NM - nautical miles
+    // YD - yards
+    // FT - feet
+    GC.distance(origin.latitude, origin.longitude, dest.latitude, dest.longitude, unitType)
+  ),
 };
 
 export default helpers;
