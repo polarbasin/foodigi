@@ -87,6 +87,7 @@ class App extends React.Component {
               ? <Results
                 heading={this.state.heading}
                 foodData={this.state.foodData}
+                origin={this.state.currCoords}
               />
               :
               (<div>
