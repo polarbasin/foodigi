@@ -15,6 +15,8 @@ h1 {
   font-family: $font;
   font-size: 220px;
   color: $sup-color-orange;
+  margin-top: .2em;
+  margin-bottom: .2em;
 }
 
 .dev-info {
@@ -49,11 +51,26 @@ input {
   width: 300px;
   height: 300px;
   margin-top: 1.2em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   background-color: $sup-color-orange;
   border-radius: 50%;
   font-family: $font;
   font-size: 7em;
   color: white;
   border: none;
+}
+
+.yelp-bar {
+  float: bottom;
+}
+
+h4 {
+  font-size: 1.7em;
+}
+
+.logo {
+  height: 75px;
+  position: relative;
+  left: 12px;
+  top: 17px;
 }

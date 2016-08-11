@@ -3,6 +3,7 @@ import React from 'react';
 import Button from './Button.jsx';
 import Search from './Search.jsx';
 import Results from './Results.jsx';
+import Yelp from './Yelp.jsx';
 import Coords from './dev_components/Coords.jsx';
 import helpers from '../helpers';
 import services from '../services';
@@ -92,6 +93,7 @@ class App extends React.Component {
           handleClick={this.handleGoClick}
           text={this.state.showResults ? 'BACK' : 'GO'}
         />
+        <Yelp />
       </div>
     );
   }
