@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Coords = ({ location, count, err }) => (
+const Coords = ({ location, count, err, compassHeading }) => (
   <div className="dev-info">
     <p>
       status: { err.message }<br />
@@ -8,12 +8,16 @@ const Coords = ({ location, count, err }) => (
       lat: { location.latitude }<br />
       long: { location.longitude }<br />
       acc: { location.accuracy }<br />
+      compassH: { compassHeading }<br />
     </p>
   </div>
 );
 
-Coords.propTypes = { location: React.PropTypes.object };
-Coords.propTypes = { count: React.PropTypes.number };
-Coords.propTypes = { err: React.PropTypes.object };
+Coords.propTypes = {
+  location: React.PropTypes.object,
+  count: React.PropTypes.number,
+  err: React.PropTypes.object,
+  compassHeading: React.PropTypes.number,
+};
 
 export default Coords;
