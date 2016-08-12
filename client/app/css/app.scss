@@ -44,7 +44,8 @@ input {
   color: white;
   font-size: 5em;
   text-align: center;
-  border-bottom: 5px solid white;
+  border: 10px solid $pri-color-blue;
+  border-radius: 50px;
   outline: none;
   padding: 10px;
 }
@@ -63,12 +64,13 @@ input {
 }
 
 svg {
+  margin-top: 0px;
+  margin: auto;
+  display: block;
+  width: 650px;
+  height: 650px;
   position: relative;
-  left: -100%;
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  height: 550px;
+  left: 250%;
 }
 
 h3 {
