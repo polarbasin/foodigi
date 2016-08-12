@@ -16,7 +16,7 @@ const FoodResults = ({ foodData, origin }) => (
 
 FoodResults.propTypes = {
   foodData: React.PropTypes.object,
-  origin: React.PropTypes.number,
+  origin: React.PropTypes.object,
 };
 
 export default FoodResults;
