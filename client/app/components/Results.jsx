@@ -5,7 +5,7 @@ import Compass from './Compass.jsx';
 
 const Results = ({ compassHeading, foodData, origin }) => (
   <div id="results" className="search-results">
-    <FoodResults foodData={foodData} origin={origin} />
+    <FoodResults foodData={foodData} origin={origin} compassHeading={compassHeading} />
     <Compass
       compassHeading={compassHeading}
       origin={origin}

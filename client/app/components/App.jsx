@@ -23,7 +23,8 @@ class App extends React.Component {
       currCoords: {},
       localeUpdateCount: 0,
       err: { message: '' },
-      heading: 270,
+      deviceHeading: 0,
+      compassHeading: 0,
       showResults: false,
       buttonText: 'GO',
       foodData: testData,
@@ -44,8 +45,16 @@ class App extends React.Component {
       }
     });
 
-    helpers.getDeviceHeading((err, heading) => {
-      this.setState({ heading });
+    // helpers.getDeviceHeading((err, heading) => {
+    //   this.setState({ deviceHeading: heading });
+    // });
+
+    helpers.getCompassHeading((err, heading) => {
+      if (err) {
+        console.error('Error with compass', err);
+      } else {
+        this.setState({ compassHeading: heading });
+      }
     });
   }
 
@@ -82,10 +91,11 @@ class App extends React.Component {
               location={this.state.currCoords}
               count={this.state.localeUpdateCount}
               err={this.state.err}
+              compassHeading={this.state.compassHeading}
             />
             { this.state.showResults
               ? <Results
-                compassHeading={this.state.heading}
+                compassHeading={this.state.compassHeading}
                 foodData={this.state.foodData}
                 origin={this.state.currCoords}
               />

@@ -1,5 +1,5 @@
-/* global navigator */
-import GC from 'great-circle'
+/* global navigator, window */
+import GC from 'great-circle';
 import GyroNorm from '../../../node_modules/gyronorm/dist/gyronorm.complete.min.js';
 
 const helpers = {
@@ -43,7 +43,11 @@ const helpers = {
       });
     }
   },
-
+  getCompassHeading: (callback) => {
+    window.addEventListener('deviceorientation', (event) => {
+      callback(null, event.webkitCompassHeading);
+    });
+  },
   getDeviceHeading: (callback) => {
     const gn = new GyroNorm();
     gn.init().then(() => {
