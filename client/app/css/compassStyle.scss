@@ -25,6 +25,15 @@ $font: 'Fredoka One';
         margin-top:80px;
     }
 }
+#needle {
+    background-color: $pri-color-orange;
+    width: 1em;
+    height: ($spinner-radius * 0.7) * 1px;
+    position: relative;
+    left: ($spinner-radius / 2.058919) * 1px;
+    top: ($spinner-radius / 30.5555556) * 1px;
+    text-align: center;
+}
 #spinner {
     background-color: $pri-color-blue;
     box-shadow:0 0 4px #444 inset;
