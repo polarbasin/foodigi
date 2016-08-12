@@ -14,7 +14,7 @@ const services = {
       // need to generate location dynamically from GPS coords
       // yelp API needs this spelled out
       location: 'New+Orleans',
-      sort: '2', // 0=Best matched (default), 1=Distance, 2=Highest Rated
+      sort: '1', // 0=Best matched (default), 1=Distance, 2=Highest Rated
     };
 
     const requiredParams = {
