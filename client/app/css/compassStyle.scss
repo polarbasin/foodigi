@@ -26,13 +26,23 @@ $font: 'Fredoka One';
     }
 }
 #needle {
-    background-color: $pri-color-orange;
+    background-color: $sup-color-orange;
     width: 1em;
     height: ($spinner-radius * 0.7) * 1px;
     position: relative;
-    left: ($spinner-radius / 2.058919) * 1px;
-    top: ($spinner-radius / 30.5555556) * 1px;
+    left: ($spinner-radius / 2.05) * 1px;
+    top: ($spinner-radius / 19.6428571) * 1px;
     text-align: center;
+}
+#arrow-up {
+  width: 0;
+  height: 0;
+  position: relative;
+  left: ($spinner-radius / -17.0807453) * 1px;
+  top: ($spinner-radius / -27.5) * 1px;
+  border-style: solid;
+  border-width: 0 40px 40px 40px;
+  border-color: transparent transparent $sup-color-orange transparent;
 }
 #spinner {
     background-color: $pri-color-blue;

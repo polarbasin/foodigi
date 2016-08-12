@@ -15,6 +15,14 @@ const Compass = ({ compassHeading, origin, dest }) => (
     <div id="compass" style={{ transform: `rotateZ(-${compassHeading}deg)` }} >
       <div id="spinner" style={{ transition: 'none' }}>
         <div id="pin" />
+        <div
+          id="needle"
+          style={{
+            WebkitTransform: `rotateZ(${helpers.calculateBearing(origin, dest)}deg)`,
+          }}
+        >
+          <div id="arrow-up" />
+        </div>
         {
           degrees.map((degree, i) => (
             <div
@@ -37,12 +45,6 @@ const Compass = ({ compassHeading, origin, dest }) => (
             </div>
           ))
         }
-        <div
-          id="needle"
-          style={{
-            WebkitTransform: `rotateZ(-${helpers.calculateBearing(origin, dest) - 90}deg)`,
-          }}
-        />
       </div>
     </div>
     <Distance origin={origin} dest={dest} />
