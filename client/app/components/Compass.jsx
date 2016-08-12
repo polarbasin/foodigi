@@ -1,6 +1,7 @@
 import _ from 'underscore';
 
 import React from 'react';
+import helpers from '../helpers';
 import Distance from './Distance.jsx';
 import '../css/compassStyle.scss';
 
@@ -9,9 +10,9 @@ const cardLabels = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
 
 // Referenced from https://github.com/jamesgpearce/compios5
 
-const Compass = ({ heading, origin, dest }) => (
+const Compass = ({ compassHeading, origin, dest }) => (
   <div>
-    <div id="compass" style={{ WebkitTransform: `rotateZ(-${heading}deg)` }} >
+    <div id="compass" style={{ transform: `rotateZ(${compassHeading}deg)` }} >
       <div id="spinner" style={{ transition: 'none' }}>
         <div id="pin" />
         {
@@ -36,6 +37,12 @@ const Compass = ({ heading, origin, dest }) => (
             </div>
           ))
         }
+        <div
+          id="needle"
+          style={{
+            WebkitTransform: `rotateZ(-${helpers.calculateBearing(origin, dest) - 90}deg)`,
+          }}
+        />
       </div>
     </div>
     <Distance origin={origin} dest={dest} />
@@ -43,7 +50,7 @@ const Compass = ({ heading, origin, dest }) => (
 );
 
 Compass.propTypes = {
-  heading: React.PropTypes.number,
+  compassHeading: React.PropTypes.number,
   origin: React.PropTypes.object,
   dest: React.PropTypes.object,
 };

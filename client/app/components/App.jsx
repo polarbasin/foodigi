@@ -85,7 +85,7 @@ class App extends React.Component {
             />
             { this.state.showResults
               ? <Results
-                heading={this.state.heading}
+                compassHeading={this.state.heading}
                 foodData={this.state.foodData}
                 origin={this.state.currCoords}
               />
