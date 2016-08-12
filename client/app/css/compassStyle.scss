@@ -9,6 +9,7 @@ $font: 'Fredoka One';
 
 #compass {
     background-color: $sup-color-orange;
+    margin-top: 0px;
     margin:auto;
     border-radius:($spinner-radius / 1.53846153846) * 1px;
     width:($spinner-radius * 1.2) * 1px;
@@ -22,7 +23,7 @@ $font: 'Fredoka One';
 }
 @media (orientation:portrait) {
     #compass {
-        margin-top:80px;
+        margin-top:0px;
     }
 }
 #needle {
