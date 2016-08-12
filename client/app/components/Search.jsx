@@ -2,7 +2,13 @@ import React from 'react';
 
 const Search = ({ onInput }) => (
   <div>
-    <input type="text" name="foodsearch" onChange={onInput} autoFocus />
+    <input
+      type="text"
+      placeholder=". . ."
+      name="foodsearch"
+      onChange={onInput}
+      autoFocus
+    />
   </div>
 );
 
