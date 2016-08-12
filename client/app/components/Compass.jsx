@@ -12,7 +12,7 @@ const cardLabels = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
 
 const Compass = ({ compassHeading, origin, dest }) => (
   <div>
-    <div id="compass" style={{ transform: `rotateZ(${compassHeading}deg)` }} >
+    <div id="compass" style={{ transform: `rotateZ(-${compassHeading}deg)` }} >
       <div id="spinner" style={{ transition: 'none' }}>
         <div id="pin" />
         {
