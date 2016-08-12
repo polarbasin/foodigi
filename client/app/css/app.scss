@@ -42,9 +42,11 @@ input {
   background-color: $sup-color-blue;
   font-family: $font;
   color: white;
-  font-size: 5.5em;
+  font-size: 5em;
   text-align: center;
   border-bottom: 5px solid white;
+  outline: none;
+  padding: 10px;
 }
 
 .go-button {
@@ -55,18 +57,18 @@ input {
   background-color: $sup-color-orange;
   border-radius: 50%;
   font-family: $font;
-  font-size: 7em;
+  font-size: 6em;
   color: white;
   border: none;
 }
 
 svg {
   position: relative;
-  left: 50%;
+  left: -100%;
   -webkit-transform: translateX(50%);
   -ms-transform: translateX(50%);
   transform: translateX(50%);
-  height: 500px;
+  height: 550px;
 }
 
 .yelp-bar {
