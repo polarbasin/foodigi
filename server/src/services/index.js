@@ -3,18 +3,22 @@ import nonce from 'nonce';
 import axios from 'axios';
 import _ from 'underscore';
 import qs from 'querystring';
+import cities from 'cities';
 
 const n = nonce();
 
 const services = {
   handleYelpSearch: (req, res) => {
+    const coords = req.query.cll.split(',');
+    const lat = parseFloat(coords[0]);
+    const long = parseFloat(coords[1]);
+
     const baseUrl = 'https://api.yelp.com/v2/search/';
 
     const defaultParams = {
-      // need to generate location dynamically from GPS coords
-      // yelp API needs this spelled out
-      location: 'New+Orleans',
       sort: '1', // 0=Best matched (default), 1=Distance, 2=Highest Rated
+      location: cities.gps_lookup(lat, long).city.split(' ').join('+'), // 'New+Orleans'
+      category_filter: 'food,restaurants',
     };
 
     const requiredParams = {
@@ -26,7 +30,7 @@ const services = {
       oauth_version: '1.0',
     };
 
-    const term = `food+${req.query.food}`; // prepending with 'food' to only get restaurants
+    const term = req.query.food;
     const cll = req.query.cll; // lat and long coords
 
     const params = _.extend(
