@@ -87,17 +87,12 @@ class App extends React.Component {
           ? <Load />
           :
           (<div>
-            <Coords
-              location={this.state.currCoords}
-              count={this.state.localeUpdateCount}
-              err={this.state.err}
-              compassHeading={this.state.compassHeading}
-            />
             { this.state.showResults
               ? <Results
                 compassHeading={this.state.compassHeading}
                 foodData={this.state.foodData}
                 origin={this.state.currCoords}
+                foodQuery={this.state.food}
               />
               :
               (<div>
@@ -109,6 +104,12 @@ class App extends React.Component {
             <Button
               handleClick={this.handleGoClick}
               text={this.state.showResults ? 'BACK' : 'GO'}
+            />
+            <Coords
+              location={this.state.currCoords}
+              count={this.state.localeUpdateCount}
+              err={this.state.err}
+              compassHeading={this.state.compassHeading}
             />
           </div>
           )

@@ -10,7 +10,7 @@ const cardLabels = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
 
 // Referenced from https://github.com/jamesgpearce/compios5
 
-const Compass = ({ compassHeading, origin, dest }) => (
+const Compass = ({ compassHeading, origin, dest, foodQuery }) => (
   <div>
     <div id="compass" style={{ transform: `rotateZ(-${compassHeading}deg)` }} >
       <div id="spinner" style={{ transition: 'none' }}>
@@ -47,7 +47,7 @@ const Compass = ({ compassHeading, origin, dest }) => (
         }
       </div>
     </div>
-    <Distance origin={origin} dest={dest} />
+    <Distance origin={origin} dest={dest} foodQuery={foodQuery} />
   </div>
 );
 
@@ -55,6 +55,7 @@ Compass.propTypes = {
   compassHeading: React.PropTypes.number,
   origin: React.PropTypes.object,
   dest: React.PropTypes.object,
+  foodQuery: React.PropTypes.string,
 };
 
 export default Compass;
