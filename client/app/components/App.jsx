@@ -5,7 +5,7 @@ import Search from './Search.jsx';
 import Results from './Results.jsx';
 import Load from './Load.jsx';
 import Yelp from './Yelp.jsx';
-import Coords from './dev_components/Coords.jsx';
+// import Coords from './dev_components/Coords.jsx';
 import helpers from '../helpers';
 import services from '../services';
 
@@ -105,12 +105,15 @@ class App extends React.Component {
               handleClick={this.handleGoClick}
               text={this.state.showResults ? 'BACK' : 'GO'}
             />
-            <Coords
-              location={this.state.currCoords}
-              count={this.state.localeUpdateCount}
-              err={this.state.err}
-              compassHeading={this.state.compassHeading}
-            />
+            { /*
+              <Coords
+                location={this.state.currCoords}
+                count={this.state.localeUpdateCount}
+                err={this.state.err}
+                compassHeading={this.state.compassHeading}
+              />
+            */}
+
           </div>
           )
         }
