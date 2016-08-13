@@ -49,9 +49,10 @@ To start Webpack (transpiles React JSX into ES5 Javascript)
 npm run watch
 ```
 
-Then in another terminal start a `http-server` in the `client/app/public' folder to test the front end over Wifi:
+Then in another terminal start a `http-server` in the `client/app/public` folder to test the front end over Wifi:
 
 ```sh
+npm install -g http-server
 http-server -p 1337
 ```
 
