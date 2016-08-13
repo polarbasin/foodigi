@@ -44,9 +44,21 @@ const helpers = {
     }
   },
   getCompassHeading: (callback) => {
-    window.addEventListener('deviceorientation', (event) => {
-      callback(null, event.webkitCompassHeading);
-    });
+    if (!window.DeviceOrientationEvent) {
+      callback({ message: 'device not supported.' });
+    } else {
+      window.addEventListener('deviceorientation', (event) => {
+        let compassHeading;
+        if (event.webkitCompassHeading) {
+          // iOS compass Heading
+          compassHeading = event.webkitCompassHeading;
+        } else {
+          // everything else
+          compassHeading = event.alpha;
+        }
+        callback(null, compassHeading);
+      });
+    }
   },
   getDeviceHeading: (callback) => {
     const gn = new GyroNorm();
