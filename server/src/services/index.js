@@ -7,17 +7,24 @@ import cities from 'cities';
 
 const n = nonce();
 
+const getCityName = (cllString) => {
+  const coords = cllString.split(',');
+  const lat = parseFloat(coords[0]);
+  const long = parseFloat(coords[1]);
+  const cityName = cities.gps_lookup(lat, long).city;
+  if (!cityName) {
+    return 'New+Orleans'; // default city
+  }
+  return cityName.split(' ').join('+');
+};
+
 const services = {
   handleYelpSearch: (req, res) => {
-    const coords = req.query.cll.split(',');
-    const lat = parseFloat(coords[0]);
-    const long = parseFloat(coords[1]);
-
     const baseUrl = 'https://api.yelp.com/v2/search/';
 
     const defaultParams = {
       sort: '1', // 0=Best matched (default), 1=Distance, 2=Highest Rated
-      location: cities.gps_lookup(lat, long).city.split(' ').join('+'), // 'New+Orleans'
+      location: getCityName(req.query.cll), // 'New+Orleans'
       category_filter: 'food,restaurants',
     };
 
