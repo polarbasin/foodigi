@@ -63,7 +63,8 @@ const services = {
 
     axios.get(fullUrl)
     .then(results => {
-      console.log('Yelp search successful');
+      console.log(`Yelp search for "${term}" successful.`, results.data.businesses[0]);
+      // should process results with custom algorithm before sending to client
       res.send(results.data);
     })
     .catch(err => {
