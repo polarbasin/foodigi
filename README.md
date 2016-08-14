@@ -28,7 +28,6 @@
 
 - Node 6.0.x
 - Webpack
-- http-server (for mobile testing over wifi)
 - mobile device with GPS and Compass
 
 ## Development
@@ -42,18 +41,12 @@ npm install
 npm run dev
 ```
 
-You can also just run the React front-end without the server:
-To start Webpack (transpiles React JSX into ES5 Javascript)
+You can try it out on your mobile device over wifi by hitting `[your-local-ip-address:[port]]` with your mobile browser.
+
+example:
 
 ```sh
-npm run watch
-```
-
-Then in another terminal start a `http-server` in the `client/app/public` folder to test the front end over Wifi:
-
-```sh
-npm install -g http-server
-http-server -p 1337
+192.168.1.5:1337
 ```
 
 ### Roadmap
