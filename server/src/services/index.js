@@ -7,15 +7,11 @@ import cities from 'cities';
 
 const n = nonce();
 
-const getCityName = (cllString) => {
+const getZipCode = (cllString) => {
   const coords = cllString.split(',');
   const lat = parseFloat(coords[0]);
   const long = parseFloat(coords[1]);
-  const cityName = cities.gps_lookup(lat, long).city;
-  if (!cityName) {
-    return 'New+Orleans'; // default city
-  }
-  return cityName.split(' ').join('+');
+  return cities.gps_lookup(lat, long).zipcode;
 };
 
 const services = {
@@ -24,7 +20,7 @@ const services = {
 
     const defaultParams = {
       sort: '1', // 0=Best matched (default), 1=Distance, 2=Highest Rated
-      location: getCityName(req.query.cll), // 'New+Orleans'
+      location: getZipCode(req.query.cll), // '70130'
       category_filter: 'food,restaurants',
     };
 
