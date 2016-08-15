@@ -5,6 +5,7 @@ import Search from './Search.jsx';
 import Results from './Results.jsx';
 import Load from './Load.jsx';
 import Yelp from './Yelp.jsx';
+// import ErrorMsg from './ErrorMsg.jsx';
 // import Coords from './dev_components/Coords.jsx';
 import helpers from '../helpers';
 import services from '../services';
@@ -22,7 +23,7 @@ class App extends React.Component {
     this.state = {
       currCoords: {},
       localeUpdateCount: 0,
-      err: { message: '' },
+      errorMsg: '',
       deviceHeading: 0,
       compassHeading: 0,
       showResults: false,
@@ -36,24 +37,25 @@ class App extends React.Component {
     helpers.watchGeolocation((err, position) => {
       if (err) {
         console.error(err);
-        this.setState({ err });
+        this.setState({ errorMsg: 'No GPS data. Check GPS settings.' });
       } else {
         this.setState({
+          errorMsg: '',
           currCoords: position.coords,
           localeUpdateCount: this.state.localeUpdateCount += 1,
         });
       }
     });
 
-    // helpers.getDeviceHeading((err, heading) => {
-    //   this.setState({ deviceHeading: heading });
-    // });
-
     helpers.getCompassHeading((err, heading) => {
       if (err) {
         console.error('Error with compass', err);
+        this.setState({ errorMsg: 'Error with compass' });
       } else {
-        this.setState({ compassHeading: heading });
+        this.setState({
+          errorMsg: '',
+          compassHeading: heading,
+        });
       }
     });
   }
@@ -61,7 +63,7 @@ class App extends React.Component {
   handleGoClick() {
     this.setState({ showResults: !this.state.showResults }, () => {
       if (this.state.showResults) {
-        this.setState({ loading: true });
+        this.setState({ loading: true, errorMsg: '' });
         services.searchYelp(
           this.state.food,
           this.state.currCoords.latitude,
@@ -69,7 +71,17 @@ class App extends React.Component {
         )
         .then((results) => {
           console.log(results);
-          this.setState({ loading: false, foodData: results.businesses[0] });
+          this.setState({
+            errorMsg: '',
+            loading: false,
+            foodData: results.businesses[0],
+          });
+        })
+        .catch(err => {
+          console.error('Yelp search error', err);
+          this.setState({
+            errorMsg: 'Error with Yelp server. Please try again.',
+          });
         });
       }
     });
@@ -105,17 +117,7 @@ class App extends React.Component {
               handleClick={this.handleGoClick}
               text={this.state.showResults ? 'BACK' : 'GO'}
             />
-            { /*
-              <Coords
-                location={this.state.currCoords}
-                count={this.state.localeUpdateCount}
-                err={this.state.err}
-                compassHeading={this.state.compassHeading}
-              />
-            */}
-
-          </div>
-          )
+          </div>)
         }
         <Yelp />
       </div>
