@@ -1,13 +1,17 @@
 import React from 'react';
 
 const Search = ({ onInput }) => (
-  <div>
+  <div
+    className="input-container"
+  >
     <input
+      style={{
+        backgroundImage: 'url(assets/cursor.gif)',
+      }}
       type="text"
-      placeholder=". . ."
-      name="foodsearch"
+      // placeholder="Chicken"
+      className="foodSearch"
       onChange={onInput}
-      autoFocus
     />
   </div>
 );
