@@ -9,7 +9,6 @@ const Search = ({ onInput }) => (
         backgroundImage: 'url(assets/cursor.gif)',
       }}
       type="text"
-      // placeholder="Chicken"
       className="foodSearch"
       onChange={onInput}
     />

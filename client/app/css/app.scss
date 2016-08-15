@@ -45,7 +45,6 @@ br {
   width: 80%;
   height: 100px;
   border: none;
-  // background-image: url("search.png");
   font-family: $font;
   color: black;
   font-size: 5em;
@@ -59,25 +58,6 @@ br {
 .foodSearch:focus { 
     background-image: none !important;
 }
-
-// input {
-//   width: 80%;
-//   height: 100px;
-//   border: none;
-//   background-color: white;
-//   // background-image: url("cursor.gif");
-//   background-size: 25px 25px;
-//   background-position: right center;
-//   background-repeat: no-repeat;
-//   font-family: $font;
-//   color: black;
-//   font-size: 5em;
-//   text-align: center;
-//   border: 10px solid $pri-color-blue;
-//   border-radius: 50px;
-//   outline: none;
-//   padding: 10px;
-// }
 
 .go-button {
   width: 300px;
