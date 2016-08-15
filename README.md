@@ -5,9 +5,9 @@
 
 ## Team
 
-  - __Product Owner__: glaserD
-  - __Scrum Master__: harveysanders
-  - __Development Team Members__: harveysanders, glaserD
+  - __Product Owner__: [glaserD](https://github.com/glaserd)
+  - __Scrum Master__: [harveysanders](https://github.com/harveysanders)
+  - __Development Team Members__: [harveysanders](https://github.com/harveysanders), [glaserD](https://github.com/glaserd)
 
 ## Table of Contents
 
@@ -21,31 +21,37 @@
 
 ## Usage
 
-> Some usage instructions
+[Live beta deployed on Heroku](https://polarbasin.herokuapp.com)
+
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Node 6.0.x
+- Webpack
+- mobile device with GPS and Compass
 
 ## Development
 
 ### Installing Dependencies
 
-From within the root directory:
+From within the root directory for full stack:
 
 ```sh
-sudo npm install -g bower
 npm install
-bower install
+npm run dev
+```
+
+You can try it out on your mobile device over wifi by hitting `[your-local-ip-address:[port]]` with your mobile browser.
+
+example:
+
+```sh
+192.168.1.5:1337
 ```
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/polarbasin/polarbasin/issues)
 
 
 ## Contributing
