@@ -13,7 +13,7 @@ body {
 
 h1 {
   font-family: $font;
-  font-size: 220px;
+  font-size: 11em;
   color: $sup-color-orange;
   margin-top: .2em;
   margin-bottom: .2em;
@@ -29,25 +29,34 @@ h1 {
 
 .question {
   font-size: 6em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 br {
   line-height: 1px;
 }
 
-input {
+.foodSearch {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5% 80%;
+  padding-left: 20px;
   width: 80%;
   height: 100px;
   border: none;
-  background-color: $sup-color-blue;
   font-family: $font;
-  color: white;
+  color: black;
   font-size: 5em;
   text-align: center;
   border: 10px solid $pri-color-blue;
   border-radius: 50px;
   outline: none;
   padding: 10px;
+}
+
+.foodSearch:focus { 
+    background-image: none !important;
 }
 
 .go-button {
