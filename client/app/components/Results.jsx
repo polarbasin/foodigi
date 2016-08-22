@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import FoodResults from './dev_components/FoodResults.jsx';
 import Compass from './Compass.jsx';
 
 const Results = ({ compassHeading, foodData, origin, foodQuery }) => (
@@ -11,7 +10,6 @@ const Results = ({ compassHeading, foodData, origin, foodQuery }) => (
       dest={foodData.location.coordinate}
       foodQuery={foodQuery}
     />
-    {/* <FoodResults foodData={foodData} origin={origin} compassHeading={compassHeading} /> */}
   </div>
 );
 

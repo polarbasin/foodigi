@@ -64,11 +64,17 @@ const services = {
       console.log(`sending client to ${business.name}..rating: ${business.rating}`);
       console.log(`${business.location.display_address}`);
       // should process results with custom algorithm before sending to client
-      res.send(results.data);
+      res.send(_.extend({},
+        results.data,
+        { err: '' }
+      ));
     })
     .catch(err => {
       console.error('yelp API error', err);
-      res.send('yelp API error', err);
+      res.send({
+        err: 'Error with Yelp server. Please try again.',
+        businesses: [],
+      });
     });
   },
 };

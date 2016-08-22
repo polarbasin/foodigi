@@ -30,6 +30,7 @@ class App extends React.Component {
       buttonText: 'GO',
       foodData: testData,
       loading: false,
+      noGpsErr: '',
     };
   }
 
@@ -61,7 +62,10 @@ class App extends React.Component {
   }
 
   handleGoClick() {
-    this.setState({ showResults: !this.state.showResults }, () => {
+    if (!helpers.hasGpsData(this.state.currCoords)) {
+      return this.setState({ noGpsErr: 'No GPS data. Check GPS settings.' });
+    }
+    this.setState({ showResults: !this.state.showResults, noGpsErr: '' }, () => {
       if (this.state.showResults) {
         this.setState({ loading: true, errorMsg: '' });
         services.searchYelp(
@@ -72,19 +76,22 @@ class App extends React.Component {
         .then((results) => {
           console.log(results);
           this.setState({
-            errorMsg: '',
+            errorMsg: results.err,
             loading: false,
             foodData: results.businesses[0],
-          });
+          }, () => { console.log(this.state.errorMsg); });
         })
         .catch(err => {
           console.error('Yelp search error', err);
           this.setState({
+            loading: false,
             errorMsg: 'Error with Yelp server. Please try again.',
+            foodData: testData,
           });
         });
       }
     });
+    return null; // for Eslint
   }
 
   handleSearchInput(e) {
@@ -95,6 +102,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>foodigi</h1>
+        <div>{this.state.noGpsErr}</div>
         { this.state.loading
           ? <Load />
           :
@@ -105,6 +113,7 @@ class App extends React.Component {
                 foodData={this.state.foodData}
                 origin={this.state.currCoords}
                 foodQuery={this.state.food}
+                errorMsg={this.state.errorMsg}
               />
               :
               (<div>
