@@ -79,6 +79,11 @@ const helpers = {
     // FT - feet
     GC.distance(origin.latitude, origin.longitude, dest.latitude, dest.longitude, unitType)
   ),
+  hasGpsData: currCoods => {
+    if (currCoods.latitude && currCoods.longitude) {
+      return true;
+    } return false;
+  },
 };
 
 export default helpers;
