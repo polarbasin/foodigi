@@ -21,7 +21,7 @@
 
 ## Usage
 
-[Live beta deployed on Heroku](https://polarbasin.herokuapp.com)
+[Live beta deployed on Heroku](https://foodigi.herokuapp.com)
 
 
 ## Requirements
