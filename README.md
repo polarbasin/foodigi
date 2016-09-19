@@ -12,7 +12,7 @@
 
 <div align="center">
   <p>
-    Everyone experiences the age old problem of deciding where to eat. Nothing can kill an appetite faster than being indecisive when picking a restaurant. Foodigi solves this by providing an extremely streamlined food selection process. After inputting the food you want, a compass and distance tracker will orient you to the closest restaraunt that serves it. By being selective about what information we display, foodigi aims to eliminate any preconcieved opinions of restaurants or locations. Just search for a food and walk directly to it.
+    Everyone experiences the age old problem of deciding where to eat. Nothing can kill an appetite faster than being indecisive when picking a restaurant. Foodigi solves this by providing an extremely streamlined food selection process. After inputting the food you want, a compass and distance tracker will orient you to the closest restaurant that serves it. By being selective about what information we display, foodigi aims to eliminate any preconceived opinions of restaurants or locations. Just search for a food and walk directly to it.
   </p>
 </div>
 
