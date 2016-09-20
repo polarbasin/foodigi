@@ -102,7 +102,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>foodigi</h1>
-        <div>{this.state.noGpsErr}</div>
+        <div className="error">{this.state.noGpsErr}</div>
         { this.state.loading
           ? <Load />
           :
