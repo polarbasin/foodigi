@@ -3,9 +3,9 @@ export default {
   name: 'Test',
   location: {
     address: '123 Main St',
-    coordinate: {
-      latitude: 0,
-      longitude: 0,
-    },
+  },
+  coordinates: {
+    latitude: 0,
+    longitude: 0,
   },
 };
