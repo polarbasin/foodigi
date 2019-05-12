@@ -39,7 +39,7 @@ const helpers = {
       }, {
         enableHighAccuracy: false,
         maximumAge: 0,
-        timeout: 15000,
+        timeout: 500,
       });
     }
   },

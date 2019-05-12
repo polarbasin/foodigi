@@ -4,7 +4,6 @@ import yelp from 'yelp-fusion';
 
 const client = yelp.client(process.env.API_KEY);
 
-
 const getZipCode = (cllString) => {
   const coords = cllString.split(',');
   const lat = parseFloat(coords[0]);
@@ -27,7 +26,6 @@ const services = {
     const params = _.extend(
       {},
       defaultParams,
-      // requiredParams,
       { term, cll }
     );
 
