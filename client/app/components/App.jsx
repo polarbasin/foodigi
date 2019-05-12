@@ -62,11 +62,9 @@ class App extends React.Component {
   }
 
   handleGoClick() {
-    console.log('hey');
     if (!helpers.hasGpsData(this.state.currCoords)) {
       return this.setState({ noGpsErr: 'No GPS data. Check GPS settings.' });
     }
-    console.log('hi');
     this.setState({ showResults: !this.state.showResults, noGpsErr: '' }, () => {
       if (this.state.showResults) {
         this.setState({ loading: true, errorMsg: '' });
