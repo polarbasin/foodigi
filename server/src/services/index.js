@@ -66,13 +66,13 @@ const services = {
     // const fullUrl = `${baseUrl}?${queryString}`;
 
     client.search(params, { headers: { 'content-type': 'application/json' } }).then(results => {
-      const business = results.data.businesses[0];
+      const business = results.jsonBody.businesses[0];
       console.log(`Yelp search for "${term}" successful.`);
       console.log(`sending client to ${business.name}..rating: ${business.rating}`);
       console.log(`${business.location.display_address}`);
       // should process results with custom algorithm before sending to client
       res.send(_.extend({},
-        results.data,
+        results.jsonBody,
         { err: '' }
       ));
     })
