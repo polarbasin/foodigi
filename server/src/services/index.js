@@ -1,9 +1,9 @@
-import oauthSignature from 'oauth-signature';
-import nonce from 'nonce';
-import axios from 'axios';
-import _ from 'underscore';
-import qs from 'querystring';
-import cities from 'cities';
+const oauthSignature = require('oauth-signature');
+const nonce = require('nonce');
+const axios = require('axios');
+const _ = require('underscore');
+const qs = require('querystring');
+const cities = require('cities');
 
 const n = nonce();
 
@@ -79,4 +79,4 @@ const services = {
   },
 };
 
-export default services;
+module.exports = services;
