@@ -6,6 +6,7 @@
   "configurations": [
     {
       "type": "node",
+      "envFile": "${workspaceFolder}/.env",
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/server/src/index.js"

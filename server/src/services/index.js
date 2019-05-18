@@ -2,7 +2,7 @@ const _ = require('underscore');
 const cities = require('cities');
 const yelp = require('yelp-fusion');
 
-const client = yelp.client(process.env.API_KEY);
+const client = yelp.client(process.env.YELP_API_KEY);
 
 const getZipCode = (cllString) => {
   const coords = cllString.split(',');
