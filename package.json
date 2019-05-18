@@ -57,6 +57,11 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "underscore": "^1.8.3",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "yelp-fusion": "^3.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.0"
   }
 }

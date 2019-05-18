@@ -7,7 +7,7 @@ const Results = ({ compassHeading, foodData, origin, foodQuery }) => (
     <Compass
       compassHeading={compassHeading}
       origin={origin}
-      dest={foodData.location.coordinate}
+      dest={foodData.coordinates}
       foodQuery={foodQuery}
     />
   </div>
