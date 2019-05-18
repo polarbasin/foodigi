@@ -1,11 +1,8 @@
-import oauthSignature from 'oauth-signature';
-import nonce from 'nonce';
-import axios from 'axios';
 import _ from 'underscore';
-import qs from 'querystring';
 import cities from 'cities';
+import yelp from 'yelp-fusion';
 
-const n = nonce();
+const client = yelp.client(process.env.API_KEY);
 
 const getZipCode = (cllString) => {
   const coords = cllString.split(',');
@@ -16,21 +13,11 @@ const getZipCode = (cllString) => {
 
 const services = {
   handleYelpSearch: (req, res) => {
-    const baseUrl = 'https://api.yelp.com/v2/search/';
 
     const defaultParams = {
-      sort: '1', // 0=Best matched (default), 1=Distance, 2=Highest Rated
+      sort_by: 'distance', // 0=Best matched (default), 1=Distance, 2=Highest Rated
       location: getZipCode(req.query.cll), // '70130'
-      category_filter: 'food,restaurants',
-    };
-
-    const requiredParams = {
-      oauth_consumer_key: process.env.YELP_CONSUMER_KEY,
-      oauth_token: process.env.YELP_TOKEN,
-      oauth_nonce: n(), // timestamp
-      oauth_timestamp: n().toString().substr(0, 10),
-      oauth_signature_method: 'HMAC-SHA1',
-      oauth_version: '1.0',
+      categories: 'food,restaurants',
     };
 
     const term = req.query.food;
@@ -39,33 +26,17 @@ const services = {
     const params = _.extend(
       {},
       defaultParams,
-      requiredParams,
       { term, cll }
     );
 
-    const signature = oauthSignature.generate(
-      'GET',
-      baseUrl,
-      params,
-      process.env.YELP_CONSUMER_SECRET,
-      process.env.YELP_TOKEN_SECRET,
-      { encodeSignature: false }
-    );
-
-    params.oauth_signature = signature;
-
-    const queryString = qs.stringify(params);
-    const fullUrl = `${baseUrl}?${queryString}`;
-
-    axios.get(fullUrl)
-    .then(results => {
-      const business = results.data.businesses[0];
+    client.search(params, { headers: { 'content-type': 'application/json' } }).then(results => {
+      const business = results.jsonBody.businesses[0];
       console.log(`Yelp search for "${term}" successful.`);
       console.log(`sending client to ${business.name}..rating: ${business.rating}`);
       console.log(`${business.location.display_address}`);
       // should process results with custom algorithm before sending to client
       res.send(_.extend({},
-        results.data,
+        results.jsonBody,
         { err: '' }
       ));
     })
