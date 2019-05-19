@@ -1,11 +1,11 @@
-import express from 'express';
-import path from 'path';
-import morgan from 'morgan';
+const express = require('express');
+const path = require('path');
+const morgan = require('morgan');
 
-import services from './services';
-// import testRouteHandlers from './testRouteHandlers';
+const services = require('./services');
+// const testRouteHandlers = require('./testRouteHandlers');
 
-export default function (app) {
+module.exports = (app) => {
   if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
   }
@@ -16,4 +16,4 @@ export default function (app) {
 
   app.get('/api/v1/search', services.handleYelpSearch);
   // app.get('/api/v1/search', testRouteHandlers.fakeYelpSearch);
-}
+};

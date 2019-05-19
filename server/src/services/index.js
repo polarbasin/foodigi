@@ -1,8 +1,8 @@
-import _ from 'underscore';
-import cities from 'cities';
-import yelp from 'yelp-fusion';
+const _ = require('underscore');
+const cities = require('cities');
+const yelp = require('yelp-fusion');
 
-const client = yelp.client(process.env.API_KEY);
+const client = yelp.client(process.env.YELP_API_KEY);
 
 const getZipCode = (cllString) => {
   const coords = cllString.split(',');
@@ -13,7 +13,6 @@ const getZipCode = (cllString) => {
 
 const services = {
   handleYelpSearch: (req, res) => {
-
     const defaultParams = {
       sort_by: 'distance', // 0=Best matched (default), 1=Distance, 2=Highest Rated
       location: getZipCode(req.query.cll), // '70130'
@@ -50,4 +49,4 @@ const services = {
   },
 };
 
-export default services;
+module.exports = services;

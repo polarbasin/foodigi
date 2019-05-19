@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   fakeYelpSearch: (req, res) => {
     const fakeResData = {
       region: {

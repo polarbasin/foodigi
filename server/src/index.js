@@ -1,5 +1,5 @@
-import express from 'express';
-import server from './server';
+const express = require('express');
+const server = require('./server');
 
 const app = express();
 
